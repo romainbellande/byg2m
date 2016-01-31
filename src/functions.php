@@ -51,3 +51,46 @@ function voidx_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'voidx_widgets_init' );
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type('rs-header',
+      array(
+          'labels' => array(
+              'name' => 'RS Header',
+              'singular_name' => 'RS Header'
+          ),
+          'public' => true,
+          'supports' => array('title')
+      )
+  );
+  register_post_type('rs-contact',
+      array(
+          'labels' => array(
+              'name' => 'RS Contact',
+              'singular_name' => 'RS Contact'
+          ),
+          'public' => true,
+          'supports' => array('title')
+      )
+  );
+  register_post_type('projets',
+      array(
+          'labels' => array(
+              'name' => 'Projets',
+              'singular_name' => 'Projet'
+          ),
+          'public' => true,
+          'supports' => array('title')
+      )
+  );
+  register_post_type('projets-iim',
+      array(
+          'labels' => array(
+              'name' => 'Projets IIM',
+              'singular_name' => 'Projet IIM'
+          ),
+          'public' => true,
+          'supports' => array('title')
+      )
+  );
+}

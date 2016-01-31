@@ -1,7 +1,7 @@
 // ==== CONFIGURATION ==== //
 
 // Project paths
-var project     = 'voidx'                 // The directory name for your theme; change this at the very least!
+var project     = 'byg2m'                 // The directory name for your theme; change this at the very least!
   , src         = './src/'                // The raw material of your theme: custom scripts, SCSS source files, PHP files, images, etc.; do not delete this folder!
   , build       = './build/'              // A temporary directory containing a development version of your theme; delete it anytime
   , dist        = './dist/'+project+'/'   // The distribution package that you'll be uploading to your server; delete it anytime
@@ -53,7 +53,12 @@ module.exports = {
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
       core: [
-        src+'js/responsive-menu.js'
+       src+'js/jquery.pagescroll2id.min.js'
+      , src+'js/fastclick.js'
+      , src+'js/wow.min.js'
+      , src+'js/jcarousel.js'
+      , src+'js/customCarousel.js'
+      , src+'js/responsive-menu.js'
       , src+'js/core.js'
       ]
       // The pageloader chunk provides an example of how you would add a user-configurable feature to your theme; you can delete this if you wish

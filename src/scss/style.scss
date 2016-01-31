@@ -1,17 +1,12 @@
 // ==== STYLES ==== //
-
 // Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions
 // Note: `bower_components` is already in Sass's path
-
 // Scut, a Sass utilities library: https://davidtheclark.github.io/scut/
 @import "scut/dist/scut";
-
 // Configuration variables and settings
 @import "config";
-
 // Library: mixins, functions, etc. specific to this theme
 @import "library";
-
 /*!
 Theme Name: #{metadata(theme-name)}
 Theme URI: #{metadata(theme-uri)}
@@ -25,13 +20,10 @@ Tags: #{metadata(theme-tags)}
 Text Domain: #{metadata(theme-text-domain)}
 Domain Path: #{metadata(theme-text-domain-path)}
 */
-
 // Normalize: make browsers render things more consistently
 @import "normalize";
-
 // Reset: eliminate default browser styling (optional; commented out by default)
 //@import "reset";
-
 // Everything else
 @import "helpers";
 @import "general";
@@ -39,3 +31,226 @@ Domain Path: #{metadata(theme-text-domain-path)}
 @import "menus";
 @import "navigation";
 @import "sidebar";
+@import "jcarousel";
+@import "font-awesome/font-awesome";
+body {
+  background-color: $background-color;
+  color: $primary-color-text;
+}
+header, #home, #about, #portfolio{
+  @include media-below($break-medium) {
+    height: 550px;
+  }
+}
+.content {
+  width: 600px;
+}
+#mm-site-navigation {
+  z-index: 3;
+  .mm-panels {
+    display: none;
+  }
+  #mm-menu-header {
+    margin-top: 30px;
+    li {
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      text-align: center;
+      a {
+        text-transform: uppercase;
+        color:black;
+      }
+    }
+  }
+  #responsive-menu {
+    display: block;
+  }
+}
+header {
+  z-index: 2;
+  height: 145px;
+  position: fixed;
+  #responsive-menu-toggle {
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  #site-branding {
+    margin-top: 35px;
+    margin-left: 25px;
+    @include media-below($break-medium) {
+      position: absolute;
+      margin: 0;
+      right: 20px;
+      top: 40px;
+    }
+  }
+  #r-s {
+    width: 170px;
+    top: 50px;
+    right: 20px;
+    position: absolute;
+    a {
+      padding: 0 5px;
+    }
+    @include media-below($break-medium) {
+      display: none;
+    }
+  }
+}
+.fix-menu-bg {
+  background-image: url(images/home.jpg);
+  background-position-y: -622px;
+  background-position-x: 44px;
+}
+#home {
+  background-image: url(images/home.jpg);
+  background-size: cover;
+  position: relative;
+  padding-top: 200px;
+  height: 700px;
+  @include media-below($break-medium) {
+    height: 550px;
+  }
+  #logo {
+    img {
+      margin: auto;
+      display: block;
+    }
+  }
+  #site-navigation {
+    z-index: 2;
+    width: 60%;
+    bottom: 270px;
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    .menu-inline {
+      text-align: center;
+      li {
+        display: inline;
+        float: none;
+        margin: 0;
+        a {
+          font-family: "Champagne_Limousines_Bold";
+          display: inline-block;
+          font-size: 30px;
+          color: $primary-color-text;
+          text-transform: uppercase;
+          padding: 15px 30px;
+          @include media-below(1030) {
+            padding: 15px 20px;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+    .fix-menu & {
+      @include media-above($break-medium) {
+        position: fixed;
+        top: 0;
+        padding: 40px;
+        height: 63px;
+      }
+      @include media-between($break-medium, 830) {
+        padding: 20px;
+      }
+    }
+    @include media-below(830) {
+      .menu-inline {
+        li {
+          display: block;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+#about {
+
+  @include media-above($break-medium) {
+    padding-top: 180px;
+  }
+}
+.portfolio {
+  .portfolio-title {
+    text-align: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 60%;
+    padding: 5px;
+    margin: auto;
+    h2,
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    h2 {
+      margin: 0 60px;
+      font-size: 45px;
+    }
+    img {
+      height: 100px;
+    }
+  }
+  
+  .screenshot {
+    padding: 0 14%;
+  }
+}
+#portfolio_iim {
+  @include media-above($break-medium) {
+    padding-top: 200px;
+  }
+  padding-bottom: 20px;
+}
+#contact {
+  @include media-above($break-medium) {
+    padding-top: 150px;
+  }
+  padding-bottom: 50px;
+  p {
+    .blue1 {
+      color: #477abd;
+    }
+    .blue2 {
+      color: #46609a;
+    }
+    .blue3 {
+      color: #6296be;
+    }
+    .blue4 {
+      color: #44acdf;
+    }
+  }
+  .r-s {
+    text-align: center;
+    a {
+      img {
+        padding: 5px;
+        width: 40px;
+      }
+    }
+  }
+  #mail {
+    text-align: center;
+    font-size: 25px;
+  }
+}
+footer {
+  height: 114px;
+  background-image: url(images/footer.png);
+  background-size: cover;
+  position: relative;
+  .by {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    font-size: 14px;
+    font-family: "Champagne_Limousines";
+  }
+}

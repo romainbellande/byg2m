@@ -22,18 +22,66 @@ $_color: (
   link-muted: steelblue,
   body-background: white
 );
+/* [POLICY SIZE] */
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 20px;
+$font-size-5: 34px;
+$font-size-6: 64px;
+$font-size-7: 72px;
+/* [COLOR PALETTE] */
+$background-color: #131316;
+$primary-color-text: white;
+$accent-color: #ec7f23;
+/* [TYPO] */
+@font-face {
+    font-family: Champagne_Limousines;
+    src: url('fonts/champagne_limousines/Champagne & Limousines.ttf');
+}
+@font-face {
+    font-family: Champagne_Limousines_Bold;
+    src: url('fonts/champagne_limousines/Champagne & Limousines Bold.ttf');
+}
+/* [ELEMENTS CONFIG] */
+
+#wrap-main, header, #wrap-footer, #wrap-footer footer, section{
+  width:100%;
+  padding:0px;
+  margin: 0px;
+  max-width: none;
+}
+header, #home, #about, #portfolio{
+  height: 730px;
+}
+section{
+  h2{
+    font-family: "Champagne_Limousines_Bold";
+    font-size: $font-size-6;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  p{
+    font-family: "Champagne_Limousines";
+    font-size: $font-size-4;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+}
+p{
+  .bold{
+    font-family: "Champagne_Limousines_Bold";
+  }
+  .accent{
+    color:$accent-color;
+  }
+}
 
 // Metadata; use metadata() to access
 $_metadata: (
-  theme-name:               "Voidx"
-, theme-uri:                "https://github.com/synapticism/wordpress-gulp-starter-kit"
-, theme-author:             "Alexander Synaptic"
-, theme-author-uri:         "http://synapticism.com"
-, theme-description:        "A minimally viable theme made with the WordPress/Gulp starter kit"
-, theme-version:            "0.2.0"
-, theme-license:            "GPLv3"
-, theme-license-uri:        "http://www.gnu.org/licenses/gpl.txt"
-, theme-tags:               (light, responsive-layout, right-sidebar, starter-theme, two-columns, translation-ready, white)
-, theme-text-domain:        "voidx"
-, theme-text-domain-path:   "/languages/"
+  theme-name:               "ByG2M"
+, theme-uri:                ""
+, theme-author:             "Romain Bellande"
+, theme-author-uri:         "http://berelindis.com"
 );
